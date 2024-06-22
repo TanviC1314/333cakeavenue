@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Boogaloo&family=Lobster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url("temp.png");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+
+    div.ex2 {
+      width: 72%;
+      padding: 10px;
+      max-width: 700px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 27px;
+      font-family: 'Lobster', cursive;
+      margin: auto;
+      background-color: white;
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+
+    .img1 {
+      padding-left: 20px;
+    }
+
+    .noSelect {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .noSelect:focus {
+      outline: none !important;
+    }
+
+    div.ex3 {
+      width: 69%;
+      padding: 40px;
+      max-width: 500px;
+      border-radius: 15px;
+      text-align: center;
+      padding-left: 30px;
+      font-size: 25px;
+      font-family: 'Akaya Telivigala', cursive;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.930); /* Background with opacity */
+    }
+
+    .tv {
+      border: 0;
+      border-bottom: 1px solid black;
+      text-align: left;
+      margin-right: 20px;
+      font-size: 20px;
+      width: 100%;
+      text-decoration: none;
+      word-wrap: break-word;
+      font-family: 'Akaya Telivigala', cursive;
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9); /* Input field with opacity */
+    }
+
+    .sp {
+      display: block;
+    }
+
+
+    .tv {
+      border: 0;
+      border-bottom: 1px solid black;
+      text-align: left;
+      margin-right: 20px;
+      font-size: 20px;
+      width: 100%;
+      text-decoration: none;
+      word-wrap: break-word;
+      font-family: 'Akaya Telivigala', cursive;
+      display: block;
+    }
+
+    .sp {
+      display: block;
+    }
+
+    .quantity-container {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center horizontally */
+      padding-top: 40px;
+    }
+
+    .quantity-button {
+      font-size: 20px;
+      font-weight: bold;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid black;
+      background-color: white;
+      text-align: center;
+      line-height: 30px; /* Adjust line height to match height of the button */
+      cursor: pointer;
+      user-select: none; /* Disable text selection */
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .quantity-display {
+      font-size: 20px;
+      font-family: 'Akaya Telivigala', cursive;
+      margin: 0 10px;
+      width: 50px;
+      text-align: center;
+    }
+
+    /* CSS */
+    .button-52 {
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0);
+      font-family: 'Akaya Telivigala', cursive;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button-52:after {
+      -webkit-tap-highlight-color: transparent;
+      content: "";
+      background-color: #ffe54c;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
+
+    .button-52:hover:after {
+      top: 0px;
+      left: 0px;
+    }
+
+    @media (min-width: 768px) {
+      .button-52 {
+        padding: 13px 50px 13px;
+      }
+    }
+
+    select.tv {
+      background-color: white;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .img1 {
+        width: 50px;
+        padding-left: 10px;
+      }
+
+      .img2 {
+        width: 140px;
+      }
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="all">
+    <form name="submit-to-google-sheet">
+      <br>
+      <div class="ex2">
+        <img class="img1" src="coffee-mug.png" width="58px">
+        <img style="padding-bottom: 6px;" class="img1 img2" src="333's FLAVOUR’s.png" width="188px">
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+        <span id="demo1" class="sp"></span>
+        <input type="text" name="Name" autocomplete="off" id="t1" placeholder="Name" class="tv" required onblur="fun('demo1','t1')" onfocus="myFunction('demo1','t1','Enter Your Name')">
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+        <span id="demo2" class="sp"></span>
+        <input type="tel" name="Contact" autocomplete="off" id="t2" required placeholder="Contact No." class="tv" maxlength="10" onblur="fun('demo2','t2')" onfocus="myFunction('demo2','t2','Enter your Contact Number')">
+        <br>
+      </div>
+
+      <br>
+      <div class="ex2"><span class="e2">Quantity</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></div>
+      <br>
+
+      <div class="ex3">
+        <img  src="kitkat.png" width="100px"><br><br>
+        <span>Kit Kat Jar Cake <br>(₹130)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('kitkat', 'quantityKitKat')">-</div>
+          <input type="hidden" name="kitkat" id="kitkat" value="0">
+          <div id="quantityKitKat" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('kitkat', 'quantityKitKat')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+        <img  src="i2.png" width="100px"><br><br>
+        <span>Oreo Crunch Jar Cake <br>(₹150)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('oreo', 'quantityOreo')">-</div>
+          <input type="hidden" name="oreo" id="oreo" value="0">
+          <div id="quantityOreo" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('oreo', 'quantityOreo')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+        <img  src="i3.png" width="100px"><br><br>
+        <span>Mango Mazha Jar Cake <br>(₹170)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('mango', 'quantityMango')">-</div>
+          <input type="hidden" name="mango" id="mango" value="0">
+          <div id="quantityMango" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('mango', 'quantityMango')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i4.png" width="100px"><br><br>
+        <span>Butterscotch Jar Cake <br>(₹170)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('butterscotch', 'quantityButterscotch')">-</div>
+          <input type="hidden" name="butterscotch" id="butterscotch" value="0">
+          <div id="quantityButterscotch" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('butterscotch', 'quantityButterscotch')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i5.png" width="100px"><br><br>
+        <span>Chocolate Truffle Jar Cake<br> (₹170)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('truffle', 'quantityTruffle')">-</div>
+          <input type="hidden" name="truffle" id="truffle" value="0">
+          <div id="quantityTruffle" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('truffle', 'quantityTruffle')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i6.png" width="100px"><br><br>
+        <span>Red Velvet Jar Cake <br>(₹220)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('redvelvet', 'quantityRedVelvet')">-</div>
+          <input type="hidden" name="redvelvet" id="redvelvet" value="0">
+          <div id="quantityRedVelvet" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('redvelvet', 'quantityRedVelvet')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i7.png" width="100px"><br><br>
+        <span>Red Velvet Nutella Jar Cake <br>(₹250)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('redvelvetnutella', 'quantityRedVelvetNutella')">-</div>
+          <input type="hidden" name="redvelvetnutella" id="redvelvetnutella" value="0">
+          <div id="quantityRedVelvetNutella" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('redvelvetnutella', 'quantityRedVelvetNutella')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i8.png" width="100px"><br><br>
+        <span>Nutella Bliss Jar Cake<br> (₹230)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('nutellabliss', 'quantityNutellaBliss')">-</div>
+          <input type="hidden" name="nutellabliss" id="nutellabliss" value="0">
+          <div id="quantityNutellaBliss" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('nutellabliss', 'quantityNutellaBliss')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i9.png" width="100px"><br><br>
+        <span>Ferraro Rocher Jar Cake <br>(₹250)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('ferrarorocher', 'quantityFerraroRocher')">-</div>
+          <input type="hidden" name="ferrarorocher" id="ferrarorocher" value="0">
+          <div id="quantityFerraroRocher" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('ferrarorocher', 'quantityFerraroRocher')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <div class="ex3">
+         <img  src="i10.png" width="100px"><br><br>
+        <span>Swoosh Hazelnut Jar Cake <br>(₹299)</span>
+        <div class="quantity-container">
+          <div class="quantity-button" onclick="decreaseQuantity('swooshhazelnut', 'quantitySwooshHazelnut')">-</div>
+          <input type="hidden" name="swooshhazelnut" id="swooshhazelnut" value="0">
+          <div id="quantitySwooshHazelnut" class="quantity-display">0</div>
+          <div class="quantity-button" onclick="increaseQuantity('swooshhazelnut', 'quantitySwooshHazelnut')">+</div>
+        </div>
+        <br>
+      </div>
+      <br>
+
+      <center>
+        <button type="submit" class="button-52" role="button" onclick="win()">Submit</button>
+        <br>
+      </center>
+      <br><br>
+    </form>
+  </div>
+  <script>
+    function win() {
+      window.open("last.html");
+    }
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxPszmOOF7uL891DmgkzVsDOesEaYaui3TrBTffgWHNbWsZSpKAYgh0TiqsCiDaOzdT/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+  <script>
+    function increaseQuantity(inputId, displayId) {
+      var input = document.getElementById(inputId);
+      var display = document.getElementById(displayId);
+      input.value = parseInt(input.value) + 1;
+      display.innerText = input.value;
+    }
+
+    function decreaseQuantity(inputId, displayId) {
+      var input = document.getElementById(inputId);
+      var display = document.getElementById(displayId);
+      if (input.value > 0) {
+        input.value = parseInt(input.value) - 1;
+        display.innerText = input.value;
+      }
+    }
+  </script>
+</body>
+
+</html>
